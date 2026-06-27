@@ -8,5 +8,5 @@ RUN gradle build --no-daemon
 
 # Package stage
 FROM eclipse-temurin:25-jdk-jammy
-COPY --from=build /home/gradle/src/build/libs/Smarter-Shopper-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /home/gradle/src/build/libs/demo-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
