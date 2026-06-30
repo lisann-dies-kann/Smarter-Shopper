@@ -14,15 +14,17 @@ public class ShoppingListApplication {
 		SpringApplication.run(ShoppingListApplication.class, args);
 	}
 
-		//CommandLineRunner ist eine Interface von Spring, die automatisch aufgerufen wird, wenn die App hochgefahren ist.
+	/*
+	//CommandLineRunner ist eine Interface von Spring, die automatisch aufgerufen wird, wenn die App hochgefahren ist.
 		@Bean
 		CommandLineRunner initializeItems() {
+
 			return args -> {
 				new ListItem("Ketchup");
 				new ListItem("Milch");
 				new ListItem("Eicheln");
 			};
 
-	}
+	}*/
 
 }

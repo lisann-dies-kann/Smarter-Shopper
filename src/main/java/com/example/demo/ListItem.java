@@ -1,12 +1,13 @@
 package com.example.demo;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.AnyDiscriminatorImplicitValues;
 
 @Entity
 public class ListItem {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;

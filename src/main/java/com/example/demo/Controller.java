@@ -10,8 +10,16 @@ public class Controller {
     @Autowired
     public ListItemRepository listItemRepository;
 
+    @Autowired
+    ListItemService listItemService;
+
     @GetMapping("/items")
     public Iterable<ListItem> einkaufsliste(ListItemRepository lp){
         return lp.findAll();
+    }
+
+    @PostMapping("/add")
+    public ListItem createListItem(@RequestBody ListItem listItem){
+        return listItemService.save(listItem);
     }
 }
