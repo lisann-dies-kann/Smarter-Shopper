@@ -18,7 +18,7 @@ public class Controller {
         return lp.findAll();
     }
 
-    @PostMapping("/add")
+    @PostMapping("/post/addItem")
     public ListItem createListItem(@RequestBody ListItem listItem){
         return listItemService.save(listItem);
     }
