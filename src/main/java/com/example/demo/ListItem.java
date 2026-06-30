@@ -14,7 +14,7 @@ public class ListItem {
     private boolean checked;
 
 
-
+    //Leerer Konstruktur für Hibernate
     public ListItem(){}
 
     public String getName() {
