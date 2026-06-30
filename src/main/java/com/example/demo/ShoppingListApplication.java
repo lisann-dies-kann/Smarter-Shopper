@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @SpringBootApplication
 public class ShoppingListApplication {
