@@ -8,23 +8,10 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    private ListItemService listItemService;
+    public ListItemRepository listItemRepository;
 
     @GetMapping("/items")
-    public List<ListItem> showDemoItem() {
-        return listItemService.getAllItems();}
-
-    @PostMapping("/items")
-    public ListItem addItem(@RequestBody ListItem item) {
-        listItemService.addItem(new ListItem(item.getName()));
-        System.out.println("Item added: " + listItemService.getAllItems().getLast().getName());
-        return listItemService.getAllItems().getLast();
+    public Iterable<ListItem> einkaufsliste(ListItemRepository lp){
+        return lp.findAll();
     }
-
-    /*
-    @PutMapping("/items/{id}")
-    public ListItem updateItem(@PathVariable int id, @RequestBody ListItem item){
-        return(ListItemService.updateItem(id, item));
-
-    }*/
 }

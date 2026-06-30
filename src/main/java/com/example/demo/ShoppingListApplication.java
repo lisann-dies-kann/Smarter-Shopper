@@ -5,6 +5,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @SpringBootApplication
 public class ShoppingListApplication {
@@ -14,17 +17,13 @@ public class ShoppingListApplication {
 
 		//CommandLineRunner ist eine Interface von Spring, die automatisch aufgerufen wird, wenn die App hochgefahren ist.
 		@Bean
-		CommandLineRunner initializeItems(ListItemService listItemService) {
+		CommandLineRunner initializeItems() {
 			return args -> {
-				listItemService.addItem(new ListItem(1, "Milch", false));
-				listItemService.addItem(new ListItem(2, "Brot", true));
-				listItemService.addItem(new ListItem(3, "Käse", false));
-				listItemService.addItem(new ListItem(4, "Eier", false));
+				new ListItem("Ketchup");
+				new ListItem("Milch");
+				new ListItem("Eicheln");
 			};
 
 	}
 
 }
-
-
-

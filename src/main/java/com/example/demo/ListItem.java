@@ -1,13 +1,20 @@
 package com.example.demo;
 
+import jakarta.persistence.*;
 
-
+@Entity
 public class ListItem {
-    private int id;
+
+    @Id
+    @GeneratedValue
+    private Integer id;
+
     private String name;
     private boolean checked;
 
 
+
+    public ListItem(){}
 
     public String getName() {
         return name;
@@ -27,14 +34,9 @@ public class ListItem {
         this.checked = false; // Standardmäßig auf "nicht erledigt" setzen
     }
 
-    public ListItem(){
-        this.id = (int) (Math.random() * 1000);
-        this.checked = true;
-    }
 
-
-    public void setChecked(boolean checked) {
-        this.checked = checked;
+    public void setChecked() {
+        this.checked = !checked;
     }
 
     public void setId(int id) {
