@@ -8,13 +8,10 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    public ListItemRepository listItemRepository;
-
-    @Autowired
     ListItemService listItemService;
 
     @GetMapping("/items")
-    public Iterable<ListItem> einkaufsliste(ListItemRepository lp){
+    public Iterable<ListItem> einkaufsliste(){
         return listItemService.getAllItems();
     }
 
