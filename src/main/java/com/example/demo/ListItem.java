@@ -31,7 +31,6 @@ public class ListItem {
 
     public ListItem(String name) {
         this.name = name;
-        this.id = (int) (Math.random() * 1000); // Generiere eine zufällige ID
         this.checked = false; // Standardmäßig auf "nicht erledigt" setzen
     }
 
