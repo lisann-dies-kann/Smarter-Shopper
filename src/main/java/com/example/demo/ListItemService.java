@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ListItemService {
 
+
     @Autowired
     ListItemRepository repo;
 
@@ -15,5 +16,9 @@ public class ListItemService {
 
     public ListItem get(Integer id){
         return repo.findById(id).orElseThrow(() -> new RuntimeException("Id " + id + " nicht gefunden."));
+    }
+
+    public Iterable<ListItem> getAllItems(){
+        return repo.findAll();
     }
 }

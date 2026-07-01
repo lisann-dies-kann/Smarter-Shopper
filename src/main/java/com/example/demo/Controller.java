@@ -15,7 +15,7 @@ public class Controller {
 
     @GetMapping("/items")
     public Iterable<ListItem> einkaufsliste(ListItemRepository lp){
-        return lp.findAll();
+        return listItemService.getAllItems();
     }
 
     @PostMapping("/post/addItem")
