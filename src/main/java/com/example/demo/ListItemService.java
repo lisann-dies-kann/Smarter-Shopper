@@ -14,7 +14,7 @@ public class ListItemService {
         return repo.save(listItem);
     }
 
-    public ListItem get(Integer id){
+    public ListItem get(Long id){
         return repo.findById(id).orElseThrow(() -> new RuntimeException("Id " + id + " nicht gefunden."));
     }
 

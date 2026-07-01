@@ -8,38 +8,40 @@ public class ListItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String name;
     private boolean checked;
 
 
     //Leerer Konstruktur für Hibernate
-    public ListItem(){}
-
-    public String getName() {
-        return name;
-    }
-    public boolean getChecked() {return checked;}
-    public int getId() {return id;}
-
-    public ListItem(int id, String name, boolean checked) {
-        this.id = id;
-        this.name = name;
-        this.checked = checked;
-    }
+    public ListItem() {}
 
     public ListItem(String name) {
         this.name = name;
         this.checked = false; // Standardmäßig auf "nicht erledigt" setzen
     }
 
+    public String getName() {
+        return name;
+    }
+    public boolean getChecked() {return checked;}
+    public Long getId() {return id;}
+
+    public ListItem(Long id, String name, boolean checked) {
+        this.id = id;
+        this.name = name;
+        this.checked = checked;
+    }
+
+
+
 
     public void setChecked() {
         this.checked = !checked;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
